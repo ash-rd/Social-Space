@@ -1,0 +1,13 @@
+{% extends 'posts/post_base.html' %}
+{% load bootstrap3 %}
+	{% block content %}
+	
+	<section style="background-color: #eee;">
+  	<div class="container py-4">
+  		<form class="" action="" method="POST" accept-charset="utf-8">
+  			{% csrf_token %}
+  			<input type="submit" name="" id="" value="Update" />
+  		</form>
+  	</div>
+  </section>
+	{% endblock %}

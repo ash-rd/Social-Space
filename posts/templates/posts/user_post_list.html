@@ -1,0 +1,241 @@
+{% extends 'posts/post_base.html' %}
+	{% block content %}
+		{% block preblock %}
+		
+			
+<section style="background-color: #eee;">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">{{ post_user.username }}</h5>
+            <p class="text-muted mb-1">Full Stack Developer</p>
+            <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button type="button" class="btn btn-primary">Follow</button>
+              <span> &nbsp;</span>
+              <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+								<i class="bi bi-link-45deg"></i>
+                <p class="mb-0">https://mdbootstrap.com</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="bi bi-twitter" style="color: #55acee;"></i>
+                <p class="mb-0">@mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="bi bi-instagram" style="color: #ac2bac;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="bi bi-facebook" style="color: #3b5998;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ post_user.username }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ post_user.email }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Hashed Password</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ post_user.password }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                </p>
+                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                <div class="progress rounded mb-2" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                </p>
+                <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                <div class="progress rounded mb-2" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+		
+		<div class="card-title">
+			Recent Quotes
+		</div>
+		{% for post in object_list %}
+		<div class="card">
+			<div class="card-header">
+				
+				<div class="d-flex">
+					<div class="mr-auto">
+						<!--User Icon SVG -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  						<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  						<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+						</svg>
+				
+						<a class="text-primary text-decoration-none" href="{% url 'post:for_user' username=post.user.username %}">
+							@{{ post.user.username }}
+						</a>
+						<small>in {{ post.group.name }}</small>
+					</div>
+					{% if user.is_authenticated and post.user == user %}
+						<div class="ml-auto">
+							<a href="{% url 'posts:update' pk=post.pk %}">
+								<i style="color: #212121" class="bi bi-pencil-square"></i>
+							</a>
+							<a href="{% url 'posts:delete' pk=post.pk %}">
+								<i style="padding-left: 0.3em; color: #FF0000" class="bi bi-trash"></i>
+							</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			
+			<div class="card-body">
+				<ul class="">
+					<p class="lt-base">
+						{{ post.message }}
+					</p>
+				</ul>
+				<div class="d-flex">
+					<div class="mr-auto">
+						<footer class="blockquote-footer">
+							{{ post.created_at }}
+						</footer>
+					</div>
+					<div class="ml-auto">
+						<footer class="">
+							<!-- Eye Icon -™Views Count
+							<p class="font-weight-light text-secondary" style="font-size:14px">
+							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 18">
+  							<path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+  							<path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+							</svg>
+							3.6k</p>-->
+								<a 
+								style="padding: 0.5em; font-size: 0.4em; color: #25D366"
+								id="share-wa"
+								href="whatsapp://send?text={{ post.message }}"
+								class="sharer button">
+								<i class="fa fa-3x fa-whatsapp">
+								</i>
+							</a>
+							<!--
+							<a style="padding: 0.5em; font-size: 0.4em; color: #3b5998" href="" id="share-fb" class="sharer button"><i class="fa fa-3x fa-facebook-square"></i></a>
+  						<a style="padding: 0.5em; font-size: 0.4em; color:#55acee;" href="#" id="share-tw" class="sharer button"><i class="fa fa-3x fa-twitter-square"></i></a>
+							-->
+							
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		{% endfor %}
+	</div>
+</section>
+			
+		
+		
+		
+		
+		{% endblock %}
+	{% endblock %}
