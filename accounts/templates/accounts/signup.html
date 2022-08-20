@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<br />
+	<div style="margin: 20px" class="bcontainer">
+		<h2>Create <span style="font-size: 0.5em; font-weight: normal">your account</span></h2>
+		<form class="card-body" method="POST">
+			{% csrf_token %}
+			{% bootstrap_form form %}
+			
+			<input type="submit" style="" class="btn btn-primary btn-block" name="" id="" value="Create" />
+		
+			<div class="" style="margin-top: 0.5em">
+				Already have an account? <a class="" href="{% url 'accounts:login' %}">Login</a>
+			</div>
+			
+		</form>
+	</div>
+
+{% endblock %}

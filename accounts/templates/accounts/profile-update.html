@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<br />
+	<div style="margin: 20px" class="bcontainer">
+		<h2>
+			<div class="d-flex">
+				<div class="mr-auto">
+					Update 
+						<span style="font-size: 0.5em; font-weight: normal">profile</span>
+				</div>
+				
+			<div class="ml-auto">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
+  					<path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+					</svg>
+				<!--</a>-->
+			</div>
+			</div>
+		</h2>
+		{{ post.user }}
+		{{ post_user.user }}
+		<form class="card-body" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			
+			{% bootstrap_form user_form %}
+			{% bootstrap_form profile_form %}
+			
+			<input type="submit" style="" class="btn btn-primary btn-block" name="" id="" value="Update" />
+
+		</form>
+		
+	</div>
+{% endblock %}

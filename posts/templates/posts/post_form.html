@@ -1,0 +1,53 @@
+{% extends 'posts/post_base.html' %}
+{% load bootstrap3 %}
+	{% block content %}
+	{% block pre_post %}
+	
+	
+	
+	{% if request.user.is_authenticated %}
+	<div style="margin: 20px" class="bcontainer">
+		
+		{% if not form.instance.pk %}
+		<h2>Create <span style="font-size: 0.5em; font-weight: normal">New Post</span></h2>
+
+			<form class="card-body" action="{% url 'posts:create' %}" method="POST" accept-charset="utf-8">
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				<div class="d-flex">
+					<div class="mr-auto">
+						<a href="{% url 'post:all' %}" style="text-decoration: none" class="link-secondary">
+							<i class="bi bi-arrow-return-left"></i>
+							Go Back
+						</a>
+					</div>
+					<div class="ml-auto">
+						<input type="submit" class="btn btn-success" style="" id="" value="Post"/>
+					</div>
+			</form>
+		
+		{% else %}
+			<h2>Edit <span style="font-size: 0.5em; font-weight: normal">your Post</span></h2>
+
+			<form class="card-body" action="{% url 'posts:update' pk=post.pk %}" method="POST" accept-charset="utf-8">
+				{% csrf_token %}
+				{% bootstrap_form form %}
+				<div class="d-flex p-0">
+					<div class="mr-auto">
+						<a href="{% url 'post:all' %}" style="text-decoration: none" class="link-secondary">
+							<i class="btn bi bi-arrow-return-left"></i>Go Back
+						</a>
+					</div>
+					<div class="ml-auto">
+						<input type="submit" class="btn btn-success" style="" id="" value="Update"/>
+					</div>
+				</div>
+			</form>
+		{% endif %}
+			
+	</div>
+	
+	{% endif %}
+	
+	{% endblock %}
+{% endblock %}

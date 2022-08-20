@@ -1,0 +1,35 @@
+
+.dots-menu{
+  font-size: 15px;
+  &.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 5px;
+  }
+  
+  a.btn{
+    /* @extend .glyphicon !optional;
+    &:before{
+      content: "\e235";
+    } */
+    
+    &:active{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    }
+  }
+
+  ul{
+    &.dropdown-menu {
+      right: auto;
+      left: 15px;
+      min-width: 50px;
+
+      li{
+        padding: 0;
+        width: 100%;
+        a{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

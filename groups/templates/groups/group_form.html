@@ -1,0 +1,25 @@
+{% extends 'groups/group_base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+	{% block group_content %}
+	<!--
+	<div class="jumbotron-fluid sticky-top">
+	<div style="border-radius:0px; background-color:#229ED9; padding: 12px 20px 8px 40px" class="">
+		<div class="">
+			<h4>Create New Group</h4>
+		</div>
+	</div>
+	</div>
+	
+	<div class="jumbotron">
+		<form action="{% url 'group:create' %}" method="POST" accept-charset="utf-8">
+			{% csrf_token %}
+			{% bootstrap_form form %}
+			<input type="submit" class="btn btn-success" id="" value="Create"/>
+		</form>
+	</div>
+	-->
+	
+	{% endblock %}
+{% endblock %}

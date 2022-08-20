@@ -1,0 +1,118 @@
+{% extends 'groups/group_base.html' %}
+{% load static %}
+
+{% block content %}
+	{% block content_group %}
+	
+	
+
+	<!--Hearder Content-->
+	<div class="jumbotron-fluid sticky-top">
+		<div style="border-radius:0px; background-color:#229ED9; padding: 12px 20px 8px 40px;" class="">
+			<div class="">
+				<h4 class="text-light " style="">{{ group.name }}
+				<small><small>#{{ group.posts.count }}</small></small>
+				</h4>
+			</div>
+		</div>
+	</div>
+
+	
+	
+	<section style="background-color: #eee;">
+		<div class="container py-3">
+	
+	{% if group.posts.count == 0 %}
+		<div class="card-body">
+			<h4>No posts yet</h4>
+		</div>
+		
+	{% else %}
+	
+		{% for group in group.posts.all %}
+			<div class="card">
+			<div class="card-header" style="background:#FFDB58">
+				
+				<div class="d-flex">
+					<div class="mr-auto">
+						
+						<!--User Header -->
+						<a style="text-decoration:none" class="link-dark" href="{% url 'post:for_user' username=group.user.username %}">
+						
+						{% if group.user.profile.profile_image.url != '' %}
+							<img src="{{ group.user.profile.profile_image.url }}" alt="avatar" class="rounded-circle shadow-4 img-fluid" style="object-fit:cover; width: 30px; height: 30px;"/>
+							
+						{% else %}
+							<img src="{% static "images/default-avatar.png" %}" alt="avatar" class="rounded-circle shadow-4 img-fluid" style="object-fit:cover; width: 30px; height: 30px;"/>							
+							
+						{% endif %}
+						@{{ group.user.username }}
+						</a>
+					</div>
+					
+					{% if user.is_authenticated and group.user == user %}
+						<div class="ml-auto">
+							<a href="{% url 'posts:update' pk=group.pk %}">
+								<i style="color: #212121" class="bi bi-pencil-square"></i>
+							</a>
+							<a href="{% url 'posts:delete' pk=group.pk %}">
+								<i style="padding-left: 0.3em; color: #FF0000" class="bi bi-trash"></i>
+							</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			
+			<!-- User Body -->
+			<div class="card-body">
+				<ul class="">
+					<p class="lt-base">
+						{{ group.message }}
+					</p>
+				</ul>
+				
+				<div class="d-flex">
+					<div class="mr-auto">
+						<footer class="blockquote-footer">
+							{% if group.author != '' %}
+								{{ group.author }}
+							{% else %}
+								Unknown
+							{% endif %}
+					
+						</footer>
+					</div>
+					
+					<div class="ml-auto">
+						<footer class="">
+							
+								<a 
+								style="padding: 0.5em; font-size: 0.4em; color: #25D366"
+								id="share-wa"
+								href="whatsapp://send?text={{ group.message }} — 
+									{% if group.author != '' %}
+										{{ group.author }}
+									{% else %}
+										Unknown
+									{% endif %}"
+										
+								class="sharer button">
+								<i class="fa fa-3x fa-whatsapp">
+								</i>
+							</a>
+							
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		{% endfor %}
+
+	{% endif %}
+		</div>
+	</section>
+	
+
+	{% endblock %}
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="post media">
+	<h3 class="">{{ post.message_html | safe }}</h3>
+</div>
+
+<div class="media-body">
+	<strong>{{ post.user.username }}</strong>
+</div>
+
+<h5 class="media-heading">
+	<span>
+		<a class="" href="{% url 'posts:for_user' username=post.user.username %} ">
+			@{{ post.user.username }}
+		</a>
+	</span>
+</h5>

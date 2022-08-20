@@ -1,0 +1,64 @@
+{% extends 'groups/group_base.html' %}
+
+{% block content %}
+	{% block group_content %}
+	<div class="jumbotron-fluid sticky-top">
+		
+	<div style="border-radius:0px; background-color:#229ED9; padding: 12px 20px 8px 40px;" class="">
+	
+		<div class="">
+			<div class="d-flex">
+			<div class="text-light"><h4>Groups:</h4></div>
+				<div class="ml-auto">
+					<span type="" class="text-small btn btn-warning p-1 mb-0" style="padding: 0.6em; font-size:0.8em">
+						Avaiable
+						<span class="badge badge-light p-1">
+							{{ object_list.count }}
+						</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<section style="background-color: #eee;">
+		<div class="container py-4">
+	<div class="" name="list_group">
+	
+		{% for group in object_list %}
+		<ul class="list-group">
+		
+			<a style="text-decoration:none" class="text-info font-weight-bold" href="{% url 'group:detail' slug=group.slug %}">
+			
+				<li class="list-group-item-rd d-flex justify-content-between align-items-center">
+					{{ group.name }}
+				<span class="badge badge-info badge-pill p-1.5">{{ group.posts.count }}
+				</span>
+			</li>
+			</a>
+		</ul>
+		<hr />
+		{% endfor %}
+	</div>
+
+	<br />
+	
+
+	<!--
+	<div class="">
+		<div class="">
+			<a href="" style="padding-right:20px; text-decoration:none">
+				<button type="button" class="btn btn-primary btn-block">
+					+ Create New Group
+				</button>
+  		</a>
+		</div>
+	</div>
+	-->
+
+	</div>
+	</section>
+	
+	{% endblock %}
+{% endblock %}
